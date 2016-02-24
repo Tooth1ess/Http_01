@@ -1,4 +1,4 @@
-package com.qiu.example.http_01;
+package com.qiu.parsexml;
 
 import java.io.IOException;
 import java.io.InputStream;

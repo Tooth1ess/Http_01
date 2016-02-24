@@ -16,6 +16,7 @@ public class HttpImage extends Thread {
 	private View mImageView;
 	private String mUrl;
 	private Handler mHandler;
+	private InputStream in = null; 
 	
 	public HttpImage(String url, Handler handler, View imageView) {
 		this.mImageView = imageView;
@@ -30,7 +31,7 @@ public class HttpImage extends Thread {
 			HttpURLConnection conn = (HttpURLConnection) httpUrl.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setReadTimeout(5000);
-			InputStream in = conn.getInputStream();
+			in = conn.getInputStream();
 			final Bitmap bitmap = BitmapFactory.decodeStream(in);
 			
 			mHandler.post(new Runnable() {
@@ -46,6 +47,15 @@ public class HttpImage extends Thread {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		} finally {
+			if (in != null) {
+				try {
+					in.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 }

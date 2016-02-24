@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/goods_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/goodsInc_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goodsName_textView"
+        android:layout_marginLeft="29dp"
+        android:layout_toRightOf="@+id/goods_imageView"
+        android:text="商品描述" />
+
+    <TextView
+        android:id="@+id/goodsName_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/goodsInc_textView"
+        android:layout_alignTop="@+id/goods_imageView"
+        android:text="商品名称" />
+
+    <TextView
+        android:id="@+id/goodsPrice_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/goods_imageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/goodsName_textView"
+        android:layout_marginRight="18dp"
+        android:gravity="center"
+        android:text="价格" />
+
+    <TextView
+        android:id="@+id/addDate_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goodsInc_textView"
+        android:layout_marginRight="24dp"
+        android:layout_toLeftOf="@+id/goodsPrice_textView"
+        android:text="1202-06-06" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addDate_textView"
+        android:layout_alignBottom="@+id/addDate_textView"
+        android:layout_alignLeft="@+id/goodsInc_textView"
+        android:text="发布时间:" />
+
+</RelativeLayout>

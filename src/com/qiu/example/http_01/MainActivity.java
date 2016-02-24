@@ -3,20 +3,22 @@ package com.qiu.example.http_01;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.webkit.WebView;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
-	private WebView mWebView;
+	private ListView mListView;
 	private Handler mHandler = new Handler();
+	private MyAdapter mAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mWebView = (WebView) findViewById(R.id.webView);
+		mListView = (ListView) findViewById(R.id.listView);
 
-		new HttpThread("http://www.baidu.com", mWebView, mHandler).start();
+		mAdapter = new MyAdapter(this);
+		String url = "http://192.168.56.1:8080/web/JsonServlet";
+		new HttpJson(url, mListView, mAdapter, mHandler).start();
+		
 	}
 }

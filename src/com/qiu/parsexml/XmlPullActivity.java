@@ -1,4 +1,8 @@
-package com.qiu.example.http_01;
+package com.qiu.parsexml;
+
+import com.qiu.example.http_01.R;
+import com.qiu.example.http_01.R.id;
+import com.qiu.example.http_01.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
